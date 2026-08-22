@@ -10,7 +10,7 @@ import { buildInsights, anomalyScore } from './insights.js';
 dotenv.config();
 const app = express();
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 2 * 1024 * 1024 } });
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
+app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
 app.use(express.json());
 
 const monthStart = (value = new Date()) => {
